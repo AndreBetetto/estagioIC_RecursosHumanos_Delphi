@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2023/02/19 12:27:01.810,=C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/02/19 12:27:54.087,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\TelaInicial.pas=C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/02/19 12:27:54.087,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\TelaInicial.dfm=C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2023/02/19 12:28:05.133,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\RecursosHumanos.dproj=C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2023/02/19 12:38:52.654,=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.pas</Transaction>
-    <Transaction>2023/02/19 12:54:23.243,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\insert.pas=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.pas</Transaction>
-    <Transaction>2023/02/19 12:54:23.243,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\insert.dfm=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.dfm</Transaction>
+	<Transactions>
+    <Transaction>2023/02/19 12:27:01.000.810,=C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/19 12:27:54.000.087,C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\TelaInicial.dfm</Transaction>
+    <Transaction>2023/02/19 12:27:54.000.087,C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\TelaInicial.pas</Transaction>
+    <Transaction>2023/02/19 12:28:05.000.133,C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\RecursosHumanos.dproj</Transaction>
+    <Transaction>2023/02/19 12:38:52.000.654,=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/02/19 12:54:23.000.243,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.pas=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\insert.pas</Transaction>
+    <Transaction>2023/02/19 12:54:23.000.243,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.dfm=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\insert.dfm</Transaction>
+    <Transaction>2023/02/19 13:45:16.622,=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit3.pas</Transaction>
+    <Transaction>2023/02/19 13:45:25.477,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Tabelas.dfm=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit3.dfm</Transaction>
+    <Transaction>2023/02/19 13:45:25.477,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Tabelas.pas=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit3.pas</Transaction>
   </Transactions>
-  <BT_BuildType>Debug</BT_BuildType>
+	<BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>
