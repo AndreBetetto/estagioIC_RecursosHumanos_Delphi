@@ -1,9 +1,9 @@
-object Form1: TForm1
+object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 450
-  ClientWidth = 866
+  Caption = 'Form2'
+  ClientHeight = 440
+  ClientWidth = 863
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
-    Left = 0
+    Left = -2
     Top = 0
     Width = 865
     Height = 65
@@ -52,12 +52,17 @@ object Form1: TForm1
       TabOrder = 3
     end
   end
-  object Button1: TButton
-    Left = 408
-    Top = 232
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 1
+  object FDConnection1: TFDConnection
+    Left = 286
+    Top = 32
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 334
+    Top = 32
+  end
+  object FDPhysPgDriverLink1: TFDPhysPgDriverLink
+    Left = 198
+    Top = 24
   end
 end

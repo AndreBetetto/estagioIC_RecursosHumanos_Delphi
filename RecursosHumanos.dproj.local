@@ -5,5 +5,9 @@
     <Transaction>2023/02/19 12:27:54.087,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\TelaInicial.pas=C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2023/02/19 12:27:54.087,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\TelaInicial.dfm=C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2023/02/19 12:28:05.133,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\RecursosHumanos.dproj=C:\Users\andre\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/02/19 12:38:52.654,=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/02/19 12:54:23.243,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\insert.pas=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/02/19 12:54:23.243,C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\insert.dfm=C:\Users\andre\OneDrive\Documentos\GitHub\estagioIC_RecursosHumanos_Delphi\Unit2.dfm</Transaction>
   </Transactions>
+  <BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>
