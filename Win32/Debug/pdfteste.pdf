@@ -1,0 +1,89 @@
+%PDF-1.2 
+1 0 obj
+<<
+/Type /Catalog
+/Pages 3 0 R
+/PageMode /UseNone
+/PageLayout /SinglePage
+>>
+endobj
+2 0 obj
+<<
+/Producer (PowerPdf version 0.9)
+/Author ()
+/CreationDate (D:20230219185759)
+/Creator ()
+/Keywords ()
+/Subject ()
+/Title ()
+/ModDate (D:20230219185759)
+>>
+endobj
+3 0 obj
+<<
+/Type /Pages
+/Kids [4 0 R ]
+/Count 1
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Parent 3 0 R
+/MediaBox [0 0 596 842 ]
+/Resources <<
+/Font <<
+/F0 6 0 R
+>>
+/XObject <<
+>>
+/ProcSet [/PDF /Text /ImageC ]
+>>
+/Contents 5 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 62
+/Filter []
+>>
+stream
+/F0 10 Tf
+/F0 12 Tf
+0 0 0 rg
+BT
+390 641.8 Td
+(PRLabel1) Tj
+ET
+
+endstream
+endobj
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+/BaseFont /Helvetica
+/Name /F0
+>>
+endobj
+xref
+0 7
+0000000000 65535 f
+0000000011 00000 n
+0000000111 00000 n
+0000000296 00000 n
+0000000361 00000 n
+0000000550 00000 n
+0000000681 00000 n
+trailer
+<<
+/Size 7
+/Root 1 0 R
+/Info 2 0 R
+>>
+startxref
+827
+%%EOF

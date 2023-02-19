@@ -14,6 +14,10 @@ type
     btnViewProjects: TButton;
     btnClose: TButton;
     btnQuerySql: TButton;
+    procedure btnInsertClick(Sender: TObject);
+    procedure btnQuerySqlClick(Sender: TObject);
+    procedure btnViewProjectsClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,5 +30,30 @@ var
 implementation
 
 {$R *.dfm}
+
+uses insert, Query, Tabelas;
+
+procedure TForm1.btnCloseClick(Sender: TObject);
+begin
+  Self.Close;
+end;
+
+procedure TForm1.btnInsertClick(Sender: TObject);
+begin
+  self.Hide;
+  insert.Form2.Show;
+end;
+
+procedure TForm1.btnQuerySqlClick(Sender: TObject);
+begin
+  self.Hide;
+  Query.Form4.Show;
+end;
+
+procedure TForm1.btnViewProjectsClick(Sender: TObject);
+begin
+  Self.hide;
+  Tabelas.Form3.Show;
+end;
 
 end.

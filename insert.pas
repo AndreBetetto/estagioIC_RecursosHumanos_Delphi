@@ -40,6 +40,11 @@ type
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
     FDPhysPgDriverLink1: TFDPhysPgDriverLink;
+    procedure btnQuerySqlClick(Sender: TObject);
+    procedure btnInsertClick(Sender: TObject);
+    procedure btnViewProjectsClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,5 +57,36 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Query, Tabelas, TelaInicial;
+
+procedure TForm2.btnCloseClick(Sender: TObject);
+begin
+  Self.Close;
+  TelaInicial.Form1.Close;
+end;
+
+procedure TForm2.btnInsertClick(Sender: TObject);
+begin
+  Self.Close;
+  insert.Form2.Show;
+end;
+
+procedure TForm2.btnQuerySqlClick(Sender: TObject);
+begin
+  Self.Close;
+  Query.Form4.Show;
+end;
+
+procedure TForm2.btnViewProjectsClick(Sender: TObject);
+begin
+  Self.Close;
+  Tabelas.Form3.Show;
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  btnInsert.Enabled := false;
+end;
 
 end.

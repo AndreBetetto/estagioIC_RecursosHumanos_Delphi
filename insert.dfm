@@ -1,8 +1,8 @@
 object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Form2'
-  ClientHeight = 440
+  Caption = 'Insert'
+  ClientHeight = 438
   ClientWidth = 863
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,6 +11,8 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -75,6 +77,7 @@ object Form2: TForm2
       Height = 65
       Caption = 'Inserir projeto'
       TabOrder = 0
+      OnClick = btnInsertClick
     end
     object btnViewProjects: TButton
       Left = 633
@@ -83,6 +86,7 @@ object Form2: TForm2
       Height = 65
       Caption = 'Visualizar projetos'
       TabOrder = 1
+      OnClick = btnViewProjectsClick
     end
     object btnClose: TButton
       Left = 752
@@ -91,6 +95,7 @@ object Form2: TForm2
       Height = 65
       Caption = 'Sair'
       TabOrder = 2
+      OnClick = btnCloseClick
     end
     object btnQuerySql: TButton
       Left = 395
@@ -99,6 +104,7 @@ object Form2: TForm2
       Height = 65
       Caption = 'Query tool'
       TabOrder = 3
+      OnClick = btnQuerySqlClick
     end
   end
   object txtNumProj: TEdit

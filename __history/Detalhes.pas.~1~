@@ -1,0 +1,43 @@
+unit Detalhes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm5 = class(TForm)
+    txtNumProj: TEdit;
+    Label1: TLabel;
+    txtFunc: TEdit;
+    Label2: TLabel;
+    txtPisoS: TEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    listBForm: TListBox;
+    txtDesc: TEdit;
+    Label5: TLabel;
+    Label6: TLabel;
+    txtHabil: TEdit;
+    txtHabilAll: TEdit;
+    listBHabil: TListBox;
+    btnAdd: TButton;
+    Label7: TLabel;
+    txtOrgao: TEdit;
+    btnSave: TButton;
+    comboBForm: TComboBox;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.dfm}
+
+end.
