@@ -2,7 +2,7 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Insert'
-  ClientHeight = 438
+  ClientHeight = 428
   ClientWidth = 863
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,60 +15,13 @@ object Form2: TForm2
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 32
-    Top = 107
-    Width = 94
-    Height = 13
-    Caption = 'N'#250'mero do projeto:'
-  end
-  object Label2: TLabel
-    Left = 32
-    Top = 147
-    Width = 39
-    Height = 13
-    Caption = 'Fun'#231#227'o:'
-  end
-  object Label3: TLabel
-    Left = 32
-    Top = 195
-    Width = 60
-    Height = 13
-    Caption = 'Piso-salarial:'
-  end
-  object Label4: TLabel
-    Left = 32
-    Top = 243
-    Width = 51
-    Height = 13
-    Caption = 'Forma'#231#227'o:'
-  end
-  object Label5: TLabel
-    Left = 456
-    Top = 107
-    Width = 50
-    Height = 13
-    Caption = 'Descri'#231#227'o:'
-  end
-  object Label6: TLabel
-    Left = 456
-    Top = 243
-    Width = 58
-    Height = 13
-    Caption = 'Habilidades:'
-  end
-  object Label7: TLabel
-    Left = 32
-    Top = 322
-    Width = 34
-    Height = 13
-    Caption = #211'rg'#227'o:'
-  end
   object Panel1: TPanel
     Left = -2
     Top = 0
     Width = 865
     Height = 65
+    ParentBackground = False
+    ParentColor = True
     TabOrder = 0
     object btnInsert: TButton
       Left = 514
@@ -107,30 +60,6 @@ object Form2: TForm2
       OnClick = btnQuerySqlClick
     end
   end
-  object txtNumProj: TEdit
-    Left = 132
-    Top = 104
-    Width = 193
-    Height = 21
-    TabOrder = 1
-    TextHint = '...'
-  end
-  object txtFunc: TEdit
-    Left = 132
-    Top = 144
-    Width = 193
-    Height = 21
-    TabOrder = 2
-    TextHint = '...'
-  end
-  object txtPisoS: TEdit
-    Left = 132
-    Top = 192
-    Width = 193
-    Height = 21
-    TabOrder = 3
-    TextHint = '...'
-  end
   object listBForm: TListBox
     Left = 132
     Top = 387
@@ -145,78 +74,213 @@ object Form2: TForm2
       'Ensino Superior Incompleto'
       'Ensino Superior Completo'
       '')
-    TabOrder = 4
+    TabOrder = 1
     Visible = False
   end
-  object txtDesc: TEdit
-    Left = 544
-    Top = 104
-    Width = 193
-    Height = 109
-    TabOrder = 5
-    TextHint = '...'
-  end
-  object txtHabil: TEdit
-    Left = 544
-    Top = 240
-    Width = 138
-    Height = 21
-    TabOrder = 6
-    TextHint = '...'
-  end
-  object txtHabilAll: TEdit
-    Left = 544
-    Top = 346
-    Width = 193
-    Height = 21
-    TabOrder = 7
-  end
-  object listBHabil: TListBox
-    Left = 544
-    Top = 267
-    Width = 193
-    Height = 73
-    ItemHeight = 13
-    TabOrder = 8
-  end
-  object btnAdd: TButton
-    Left = 688
-    Top = 236
-    Width = 49
-    Height = 25
-    Caption = 'Add'
-    TabOrder = 9
-  end
-  object txtOrgao: TEdit
-    Left = 132
-    Top = 319
-    Width = 193
-    Height = 21
-    TabOrder = 10
-    TextHint = '...'
-  end
   object btnSave: TButton
-    Left = 368
-    Top = 363
+    Left = 383
+    Top = 372
     Width = 113
     Height = 48
     Caption = 'Salvar'
-    TabOrder = 11
+    TabOrder = 2
+    OnClick = btnSaveClick
   end
-  object comboBForm: TComboBox
-    Left = 132
-    Top = 238
-    Width = 193
-    Height = 21
-    TabOrder = 12
-    TextHint = '...'
-    Items.Strings = (
-      'Ensino Fundamental Incompleto'
-      'Ensino Fundamental Completo'
-      'Ensino M'#233'diol Incompleto'
-      'Ensino M'#233'diol Completo'
-      'Ensino Superior Incompleto'
-      'Ensino Superior Completo')
+  object Panel2: TPanel
+    Left = 40
+    Top = 99
+    Width = 784
+    Height = 267
+    BiDiMode = bdLeftToRight
+    BorderWidth = 3
+    Ctl3D = False
+    ParentBiDiMode = False
+    ParentBackground = False
+    ParentColor = True
+    ParentCtl3D = False
+    TabOrder = 3
+    object Label6: TLabel
+      Left = 482
+      Top = 159
+      Width = 80
+      Height = 13
+      Caption = 'Habilidades:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 482
+      Top = 24
+      Width = 68
+      Height = 13
+      Caption = 'Descricao:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 24
+      Top = 24
+      Width = 127
+      Height = 13
+      Caption = 'N'#250'mero do projeto:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 24
+      Top = 65
+      Width = 51
+      Height = 13
+      Caption = 'Fun'#231#227'o:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 24
+      Top = 112
+      Width = 86
+      Height = 13
+      Caption = 'Piso-salarial:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 24
+      Top = 159
+      Width = 69
+      Height = 13
+      Caption = 'Forma'#231#227'o:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 24
+      Top = 205
+      Width = 43
+      Height = 13
+      Caption = #211'rg'#227'o:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object txtHabil: TEdit
+      Left = 568
+      Top = 156
+      Width = 144
+      Height = 27
+      TabOrder = 0
+      TextHint = '...'
+    end
+    object txtHabilAll: TEdit
+      Left = 353
+      Top = 220
+      Width = 193
+      Height = 19
+      TabOrder = 1
+      Visible = False
+    end
+    object listBHabil: TListBox
+      Left = 568
+      Top = 189
+      Width = 193
+      Height = 73
+      ItemHeight = 13
+      TabOrder = 2
+    end
+    object btnAdd: TButton
+      Left = 718
+      Top = 156
+      Width = 49
+      Height = 25
+      Caption = 'Add'
+      TabOrder = 3
+      OnClick = btnAddClick
+    end
+    object txtDesc: TMemo
+      Left = 568
+      Top = 22
+      Width = 193
+      Height = 89
+      Lines.Strings = (
+        'txtDesc')
+      TabOrder = 4
+    end
+    object txtNumProj: TEdit
+      Left = 157
+      Top = 22
+      Width = 193
+      Height = 19
+      TabOrder = 5
+      TextHint = '...'
+      OnKeyPress = txtNumProjKeyPress
+    end
+    object txtFunc: TEdit
+      Left = 124
+      Top = 62
+      Width = 193
+      Height = 19
+      TabOrder = 6
+      TextHint = '...'
+    end
+    object txtPisoS: TEdit
+      Left = 124
+      Top = 110
+      Width = 193
+      Height = 19
+      TabOrder = 7
+      TextHint = '...'
+      OnKeyPress = txtPisoSKeyPress
+    end
+    object txtOrgao: TEdit
+      Left = 124
+      Top = 199
+      Width = 193
+      Height = 19
+      TabOrder = 8
+      TextHint = '...'
+    end
+    object comboBForm: TComboBox
+      Left = 124
+      Top = 156
+      Width = 193
+      Height = 21
+      TabOrder = 9
+      TextHint = '...'
+      Items.Strings = (
+        'Ensino Fundamental Incompleto'
+        'Ensino Fundamental Completo'
+        'Ensino M'#233'dio Incompleto'
+        'Ensino M'#233'dio Completo'
+        'Ensino Superior Incompleto'
+        'Ensino Superior Completo')
+    end
   end
   object FDConnection1: TFDConnection
     Params.Strings = (

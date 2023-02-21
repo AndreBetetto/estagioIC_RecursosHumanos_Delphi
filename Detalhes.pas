@@ -32,15 +32,19 @@ type
     txtOrgao: TEdit;
     btnSave: TButton;
     comboBForm: TComboBox;
-    Label8: TLabel;
     txtIdProj: TEdit;
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
     FDPhysPgDriverLink1: TFDPhysPgDriverLink;
     PRPage1: TPRPage;
+    btnDownload: TButton;
+    SaveDialog1: TSaveDialog;
+    PReport1: TPReport;
+    txtCriadoEm: TEdit;
+    Label9: TLabel;
+    PRGridPanel7: TPRGridPanel;
     PRLayoutPanel1: TPRLayoutPanel;
     PRImage1: TPRImage;
-    btnDownload: TButton;
     PRGridPanel1: TPRGridPanel;
     PRlblNumProj: TPRLabel;
     PRGridPanel2: TPRGridPanel;
@@ -54,14 +58,13 @@ type
     PRGridPanel6: TPRGridPanel;
     PRlblAddEm: TPRLabel;
     PRlblDesc: TPRLabel;
-    PRlblHabil: TPRLabel;
-    SaveDialog1: TSaveDialog;
-    PReport1: TPReport;
-    txtCriadoEm: TEdit;
+    PRlblHabilidades: TPRLabel;
+    btnDel: TButton;
     procedure txtIdProjChange(Sender: TObject);
     procedure txtPisoSKeyPress(Sender: TObject; var Key: Char);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnDownloadClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -87,6 +90,8 @@ begin
   PRlblPiso.Caption := 'R$ ' + txtPisoS.Text;
   PRlblOrg.Caption := txtOrgao.Text;
   PRlblDesc.Caption := txtDesc.Text;
+  PRlblAddEm.Caption := txtCriadoEm.Text;
+  PRlblHabilidades.Caption := txtHabilAll.Text;
 
 
   SvDlg := TSaveDialog.Create(self);
@@ -103,7 +108,7 @@ begin
       //PReport1.FileName := FileName;
       PReport1.FileName := SvDlg.FileName;
       PReport1.BeginDoc;
-      PReport1.Print(PRPage1.Create(nil));
+      PReport1.Print(PRPage1.Create(self));
       PReport1.EndDoc;
 
       //PReport1.Print(PRPage1);
@@ -125,6 +130,12 @@ begin
   listBHabil.Clear;
 end;
 
+
+procedure TForm5.FormCreate(Sender: TObject);
+begin
+  Form5.Color := rgb(196, 215, 224);
+end;
+
 procedure TForm5.txtIdProjChange(Sender: TObject);
 var
   projnum : integer;
@@ -137,6 +148,7 @@ var
   i : integer;
   arrayString : TArray<string>;
   i2 : integer;
+  criado_em : TDateTime;
 begin
 
   try
@@ -152,6 +164,7 @@ begin
       habilidades := FDQuery1.FieldByName('habilidades').AsString;
       orgao := FDQuery1.FieldByName('orgao').AsString;
       piso_salarial := FDQuery1.FieldByName('piso_salarial').AsFloat;
+      criado_em := FDQuery1.FieldByName('adicionado_em').AsDateTime;
 
 
       txtNumProj.Text := IntToStr(projnum);
@@ -159,9 +172,10 @@ begin
       txtDesc.Text := descricao;
       txtOrgao.Text := orgao;
       txtPisoS.Text := FloatToStr(piso_salarial);
+      txtCriadoEm.Text := DateTimeToStr(criado_em);
 
       arrayString := SplitString(habilidades, '-');
-
+      txtHabilAll.Text := habilidades;
       for i2 := Low(arrayString) to High(arrayString) do
         listBHabil.Items.Add(arrayString[i2]);
 
@@ -173,6 +187,7 @@ begin
         end;
 
       end;
+
     end;
   finally
     //FDQuery1.Free;

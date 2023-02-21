@@ -111,9 +111,12 @@ end;
 procedure TForm3.FormCreate(Sender: TObject);
 begin
   btnViewProjects.Enabled := false;
-  ComboBox1.ItemIndex := 0;
+  ComboBox1.ItemIndex := 1;
   FDQuery1.SQL.Text := 'select id_projeto, projeto, funcao, piso_salarial, adicionado_em from projetoandre order by adicionado_em desc';
   FDQuery1.Open;
+  Panel1.Color := rgb(110, 133, 183);
+  //Panel2.Color := rgb(178, 200, 223);
+  Form3.Color := rgb(196, 215, 224);
 end;
 
 procedure TForm3.txtFiltroChange(Sender: TObject);

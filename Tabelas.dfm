@@ -34,6 +34,7 @@ object Form3: TForm3
     Top = 0
     Width = 865
     Height = 65
+    ParentColor = True
     TabOrder = 0
     object btnInsert: TButton
       Left = 514

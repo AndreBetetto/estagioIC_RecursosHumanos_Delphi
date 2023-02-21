@@ -5,21 +5,51 @@ object Form4: TForm4
   ClientHeight = 547
   ClientWidth = 863
   Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
+  ParentFont = True
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 32
+    Top = 101
+    Width = 177
+    Height = 13
+    Caption = 'Digite aqui o comando SQL:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Verdana'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 32
+    Top = 269
+    Width = 40
+    Height = 13
+    Caption = 'Sa'#237'da:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Verdana'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object Panel1: TPanel
     Left = -2
     Top = 0
     Width = 865
     Height = 65
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBackground = False
+    ParentColor = True
+    ParentFont = False
     TabOrder = 0
     object btnInsert: TButton
       Left = 514
@@ -58,48 +88,82 @@ object Form4: TForm4
       OnClick = btnQuerySqlClick
     end
   end
-  object PRPage1: TPRPage
-    Left = 288
-    Top = 216
-    Width = 596
-    Height = 842
-    MarginTop = 32
-    MarginLeft = 32
-    MarginRight = 32
-    MarginBottom = 32
-    object PRGridPanel1: TPRGridPanel
-      Left = 264
-      Top = 112
-      Width = 185
-      Height = 100
-      ColCount = 1
-      RowCount = 1
-      object PRLabel1: TPRLabel
-        Left = 48
-        Top = 40
-        Width = 100
-        Height = 30
-        FontName = fnArial
-        FontSize = 12.000000000000000000
-        Caption = 'PRLabel1'
-      end
-    end
+  object txtInputSQL: TMemo
+    Left = 32
+    Top = 120
+    Width = 801
+    Height = 97
+    Lines.Strings = (
+      'txtInputSQL')
+    TabOrder = 1
   end
-  object btnDownload: TButton
-    Left = 216
-    Top = 128
-    Width = 75
-    Height = 25
-    Caption = 'Download'
+  object txtOutputSQL: TMemo
+    Left = 32
+    Top = 288
+    Width = 801
+    Height = 89
+    Lines.Strings = (
+      'txtOutputSQL')
     TabOrder = 2
-    OnClick = btnDownloadClick
   end
-  object PReport1: TPReport
-    FileName = 'default.pdf'
-    CreationDate = 44976.789517141200000000
-    UseOutlines = False
-    ViewerPreference = []
-    Left = 496
-    Top = 152
+  object btnExec: TButton
+    Left = 656
+    Top = 223
+    Width = 177
+    Height = 25
+    Caption = 'Executar'
+    TabOrder = 3
+    OnClick = btnExecClick
+  end
+  object btnClear: TButton
+    Left = 32
+    Top = 223
+    Width = 177
+    Height = 25
+    Caption = 'Limpar'
+    TabOrder = 4
+    OnClick = btnClearClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 32
+    Top = 383
+    Width = 801
+    Height = 74
+    DataSource = DataSource1
+    TabOrder = 5
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from projetoandre')
+    Left = 334
+    Top = 40
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=projetoscti4'
+      'User_Name=projetoscti4'
+      'Password=cti123'
+      'Server=pgsql.projetoscti.com.br'
+      'DriverID=PG')
+    Connected = True
+    Left = 270
+    Top = 32
+  end
+  object FDPhysPgDriverLink1: TFDPhysPgDriverLink
+    VendorLib = 'C:\Program Files (x86)\PostgreSQL\psqlODBC\bin\libpq.dll'
+    Left = 214
+    Top = 40
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 384
+    Top = 240
   end
 end

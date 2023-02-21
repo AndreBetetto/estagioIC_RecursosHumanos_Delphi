@@ -18,33 +18,38 @@ type
     btnViewProjects: TButton;
     btnClose: TButton;
     btnQuerySql: TButton;
-    txtNumProj: TEdit;
-    Label1: TLabel;
-    txtFunc: TEdit;
-    Label2: TLabel;
-    txtPisoS: TEdit;
-    Label3: TLabel;
-    Label4: TLabel;
     listBForm: TListBox;
-    txtDesc: TEdit;
-    Label5: TLabel;
+    btnSave: TButton;
+    FDConnection1: TFDConnection;
+    FDQuery1: TFDQuery;
+    FDPhysPgDriverLink1: TFDPhysPgDriverLink;
+    Panel2: TPanel;
     Label6: TLabel;
     txtHabil: TEdit;
     txtHabilAll: TEdit;
     listBHabil: TListBox;
     btnAdd: TButton;
+    Label5: TLabel;
+    txtDesc: TMemo;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
     Label7: TLabel;
+    txtNumProj: TEdit;
+    txtFunc: TEdit;
+    txtPisoS: TEdit;
     txtOrgao: TEdit;
-    btnSave: TButton;
     comboBForm: TComboBox;
-    FDConnection1: TFDConnection;
-    FDQuery1: TFDQuery;
-    FDPhysPgDriverLink1: TFDPhysPgDriverLink;
     procedure btnQuerySqlClick(Sender: TObject);
     procedure btnInsertClick(Sender: TObject);
     procedure btnViewProjectsClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
+    procedure btnSaveClick(Sender: TObject);
+    procedure txtPisoSKeyPress(Sender: TObject; var Key: Char);
+    procedure txtNumProjKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -59,6 +64,16 @@ implementation
 {$R *.dfm}
 
 uses Query, Tabelas, TelaInicial;
+
+procedure TForm2.btnAddClick(Sender: TObject);
+var
+  hb : string;
+begin
+  hb := txtHabil.Text;
+  listBHabil.Items.Add(hb);
+  txtHabil.Text := '';
+  txtHabilAll.Text := txtHabilAll.Text + ' - ' +  hb;
+end;
 
 procedure TForm2.btnCloseClick(Sender: TObject);
 begin
@@ -78,6 +93,68 @@ begin
   Query.Form4.Show;
 end;
 
+procedure TForm2.btnSaveClick(Sender: TObject);
+var
+  numproj : integer;
+  func : string;
+  desc : string;
+  form : string;
+  habil : string;
+  ps : double;
+  org : string;
+  psStr : string;
+  time : TdateTime;
+  npStr : string;
+
+begin
+  numproj := strToInt(txtNumProj.Text);
+  npstr := txtNumProj.Text;
+  func := txtFunc.Text;
+  desc := txtDesc.Text;
+  form := comboBForm.Text;
+  habil := txtHabilAll.Text;
+  ps := strToFloat(txtPisoS.Text);
+  psStr := txtPisoS.Text;
+  org := txtOrgao.Text;
+  time := now;
+
+  if(npstr <> '') and (func <> '') and (desc <> '') and (form <> '')
+  and (habil <> '') and (psStr <> '') and (org <> '') then
+  begin
+    with FDQuery1 do
+    begin
+      SQL.clear;
+      try
+        SQL.Text := 'INSERT INTO projetoandre (projeto, funcao, descricao, formacao, ' +
+                    'habilidades, piso_salarial, orgao, adicionado_em) ' +
+                    'VALUES (:pnum, :fc, :ds, :fr, :hbl, :ps, :or, :add)';
+        ParamByName('pnum').AsInteger := numproj;
+        ParamByName('fc').AsString := func;
+        ParamByName('ds').AsString := desc;
+        ParamByName('fr').AsString := form;
+        ParamByName('hbl').AsString := habil;
+        ParamByName('ps').AsFloat := ps;
+        ParamByName('or').AsString := org;
+        ParamByName('add').AsDateTime := time;
+
+        ExecSQL;
+        showMessage('Dados inseridos com sucesso! ');
+      except
+        on E: Exception do
+        begin
+          showMessage('Ocorreu um erro ao inserir os dados: ' + E.Message);
+        end;
+
+
+      end;
+
+      close;
+    end;
+  end else begin
+    showMessage('Preencha todos os campos corretamente');
+  end;
+end;
+
 procedure TForm2.btnViewProjectsClick(Sender: TObject);
 begin
   Self.Close;
@@ -87,6 +164,35 @@ end;
 procedure TForm2.FormCreate(Sender: TObject);
 begin
   btnInsert.Enabled := false;
+  //panelTest.Color := $BFDB38;
+  Panel1.Color := rgb(110, 133, 183);
+  Panel2.Color := rgb(178, 200, 223);
+  Form2.Color := rgb(196, 215, 224);
+  txtDesc.Text := '';
+  txtDesc.TextHint := '...';
 end;
 
+procedure TForm2.txtNumProjKeyPress(Sender: TObject; var Key: Char);
+begin
+  if not (CharInSet(Key, ['0'..'9', #8, #13])) then
+    Key := #0;
+end;
+
+procedure TForm2.txtPisoSKeyPress(Sender: TObject; var Key: Char);
+var
+  str: string;
+  p: Integer;
+begin
+  if not (CharInSet(Key, ['0'..'9', FormatSettings.DecimalSeparator, #8, #13])) then
+    Key := #0;
+  str := txtPisoS.Text;
+  p := Pos(FormatSettings.DecimalSeparator, str);
+  if (p > 0) and (Length(str) - p > 2) then
+  begin
+    str := Copy(str, 1, p+1);
+    txtPisoS.Text := str;
+    txtPisoS.SelStart := Length(str);
+  end;
+
+end;
 end.
